@@ -2,8 +2,7 @@ package com.liuyan.soyaojbackendjudgeservice.judge;
 
 import cn.hutool.json.JSONUtil;
 
-import com.liuyan.soyaojbackendserviceclient.service.QuestionService;
-import com.liuyan.soyaojbackendserviceclient.service.QuestionSubmitService;
+import com.liuyan.soyaojbackendserviceclient.service.QuestionFeignClient;
 import com.liuyan.soyaojcommon.common.ErrorCode;
 import com.liuyan.soyaojcommon.exception.BusinessException;
 import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeRequest;
@@ -29,24 +28,22 @@ import java.util.stream.Collectors;
 @Service
 public class JudgeServiceImpl implements JudgeService {
     @Resource
-    private QuestionService questionService;
+    private QuestionFeignClient questionFeignClient;
 
-    @Resource
-    private QuestionSubmitService questionSubmitService;
 
     @Value("${sandbox.type}")
     private String type;
 
 
     @Override
-    public QuestionSubmitVO doJudge(long questionSubmitId) {
+    public QuestionSubmit doJudge(long questionSubmitId) {
         //1. 获取题目信息
-        QuestionSubmit questionSubmit = questionSubmitService.getById(questionSubmitId);
+        QuestionSubmit questionSubmit = questionFeignClient.getQuestionSubmitById(questionSubmitId);
         if (questionSubmit == null) {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "提交信息不存在");
         }
         Long questionId = questionSubmit.getQuestionId();
-        Question question = questionService.getById(questionId);
+        Question question = questionFeignClient.getQuestionById(questionId);
         if (question == null) {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "题目不存在");
         }
@@ -58,7 +55,7 @@ public class JudgeServiceImpl implements JudgeService {
         QuestionSubmit questionSubmitUpdate = new QuestionSubmit();
         questionSubmitUpdate.setId(questionSubmitId);
         questionSubmitUpdate.setStatus(QuestionSubmitStatusEnum.RUNNING.getValue());
-        boolean b = questionSubmitService.updateById(questionSubmitUpdate);
+        boolean b = questionFeignClient.updateQuestionSubmitById(questionSubmitUpdate);
         if (!b) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "更改题目状态为判题中失败！");
         }
@@ -123,15 +120,15 @@ public class JudgeServiceImpl implements JudgeService {
         submit.setId(questionSubmitId);
         submit.setJudgeInfo(JSONUtil.toJsonStr(judgeInfo));
 
-        boolean update = questionSubmitService.updateById(submit);
+        boolean update = questionFeignClient.updateQuestionSubmitById(submit);
         if (!update) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目状态更新错误");
         }
-        QuestionSubmitVO submitVO = new QuestionSubmitVO();
-        submitVO.setId(questionSubmitId);
-        submitVO.setLanguage(language);
-        submitVO.setCode(code);
-        submitVO.setStatus(judgeInfo.getSuccess() ? QuestionSubmitStatusEnum.SUCCEED.getText() : QuestionSubmitStatusEnum.FAILED.getText());
-        return submitVO;
+//        QuestionSubmitVO submitVO = new QuestionSubmitVO();
+//        submitVO.setId(questionSubmitId);
+//        submitVO.setLanguage(language);
+//        submitVO.setCode(code);
+//        submitVO.setStatus(judgeInfo.getSuccess() ? QuestionSubmitStatusEnum.SUCCEED.getText() : QuestionSubmitStatusEnum.FAILED.getText());
+        return submit;
     }
 }

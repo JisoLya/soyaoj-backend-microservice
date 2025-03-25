@@ -1,10 +1,10 @@
 package com.liuyan.soyaojbackendjudgeservice.judge;
 
 
-import com.liuyan.soyaojcommon.model.vo.QuestionSubmitVO;
+import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
 
 public interface JudgeService {
 
-    QuestionSubmitVO doJudge(long questionSubmitId);
+    QuestionSubmit doJudge(long questionSubmitId);
 
 }
