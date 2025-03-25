@@ -5,23 +5,24 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.liuyan.soyaojbackendquestionservice.message.MessageProducer;
 import com.liuyan.soyaojbackendserviceclient.service.JudgeFeignClient;
 import com.liuyan.soyaojbackendserviceclient.service.UserFeignClient;
-import com.liuyan.soyaojcommon.common.ErrorCode;
-import com.liuyan.soyaojcommon.constant.CommonConstant;
-import com.liuyan.soyaojcommon.exception.BusinessException;
-import com.liuyan.soyaojcommon.model.dto.questionsubmit.QuestionSubmitAddRequest;
-import com.liuyan.soyaojcommon.model.dto.questionsubmit.QuestionSubmitQueryRequest;
-import com.liuyan.soyaojcommon.model.entity.Question;
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.enums.QuestionSubmitLanguageEnum;
-import com.liuyan.soyaojcommon.model.enums.QuestionSubmitStatusEnum;
-import com.liuyan.soyaojcommon.model.vo.QuestionSubmitVO;
+import com.liuyan.common.ErrorCode;
+import com.liuyan.constant.CommonConstant;
+import com.liuyan.exception.BusinessException;
+import com.liuyan.model.dto.questionsubmit.QuestionSubmitAddRequest;
+import com.liuyan.model.dto.questionsubmit.QuestionSubmitQueryRequest;
+import com.liuyan.model.entity.Question;
+import com.liuyan.model.entity.QuestionSubmit;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.enums.QuestionSubmitLanguageEnum;
+import com.liuyan.model.enums.QuestionSubmitStatusEnum;
+import com.liuyan.model.vo.QuestionSubmitVO;
 import com.liuyan.soyaojbackendquestionservice.mapper.QuestionSubmitMapper;
 import com.liuyan.soyaojbackendquestionservice.service.QuestionService;
 import com.liuyan.soyaojbackendquestionservice.service.QuestionSubmitService;
-import com.liuyan.soyaojcommon.utils.SqlUtils;
+import com.liuyan.utils.SqlUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
@@ -50,6 +51,9 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
     @Resource
     @Lazy
     private JudgeFeignClient judgeFeignClient;
+
+    @Resource
+    private MessageProducer messageProducer;
 
     /**
      * 点赞
@@ -89,7 +93,9 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         Long questionSubmitId = questionSubmit.getId();
         // 执行判题服务
         CompletableFuture.runAsync(() -> {
-            judgeFeignClient.duJudge(questionSubmitId);
+            messageProducer.sendMessage("code_exchange","my_routKey",String.valueOf(questionSubmitId));
+            //原始的判题实现
+            //            judgeFeignClient.duJudge(questionSubmitId);
         });
         return questionSubmitId;
     }

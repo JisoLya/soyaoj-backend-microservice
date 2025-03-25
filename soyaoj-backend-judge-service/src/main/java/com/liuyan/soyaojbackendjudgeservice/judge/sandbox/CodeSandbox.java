@@ -1,8 +1,8 @@
 package com.liuyan.soyaojbackendjudgeservice.judge.sandbox;
 
 
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeRequest;
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeResponse;
+import com.liuyan.model.codesandbox.ExecuteCodeRequest;
+import com.liuyan.model.codesandbox.ExecuteCodeResponse;
 
 public interface CodeSandbox {
     /**

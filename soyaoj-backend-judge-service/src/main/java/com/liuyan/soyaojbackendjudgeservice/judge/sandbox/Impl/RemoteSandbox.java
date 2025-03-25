@@ -3,10 +3,10 @@ package com.liuyan.soyaojbackendjudgeservice.judge.sandbox.Impl;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
-import com.liuyan.soyaojcommon.common.ErrorCode;
-import com.liuyan.soyaojcommon.exception.BusinessException;
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeRequest;
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeResponse;
+import com.liuyan.common.ErrorCode;
+import com.liuyan.exception.BusinessException;
+import com.liuyan.model.codesandbox.ExecuteCodeRequest;
+import com.liuyan.model.codesandbox.ExecuteCodeResponse;
 import com.liuyan.soyaojbackendjudgeservice.judge.sandbox.CodeSandbox;
 
 

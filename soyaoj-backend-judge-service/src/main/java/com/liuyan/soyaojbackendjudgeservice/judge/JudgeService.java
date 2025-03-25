@@ -1,7 +1,7 @@
 package com.liuyan.soyaojbackendjudgeservice.judge;
 
 
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
+import com.liuyan.model.entity.QuestionSubmit;
 
 public interface JudgeService {
 

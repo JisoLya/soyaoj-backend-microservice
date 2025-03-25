@@ -3,8 +3,8 @@ package com.liuyan.soyaojbackendquestionservice.controller;
 import com.liuyan.soyaojbackendquestionservice.service.QuestionService;
 import com.liuyan.soyaojbackendquestionservice.service.QuestionSubmitService;
 import com.liuyan.soyaojbackendserviceclient.service.QuestionFeignClient;
-import com.liuyan.soyaojcommon.model.entity.Question;
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
+import com.liuyan.model.entity.Question;
+import com.liuyan.model.entity.QuestionSubmit;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

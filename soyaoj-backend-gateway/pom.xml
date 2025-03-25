@@ -35,6 +35,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.liuyan</groupId>
             <artifactId>soyaoj-backend-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
@@ -81,7 +86,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.liuyan.soyaojcommon.soyaojbackendgateway.SoyaojBackendGatewayApplication</mainClass>
+                    <mainClass>com.liuyan.soyaojbackendgateway.SoyaojBackendGatewayApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

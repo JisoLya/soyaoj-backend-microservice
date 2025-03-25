@@ -2,7 +2,7 @@ package com.liuyan.soyaojbackenduserservice.controller;
 
 import com.liuyan.soyaojbackendserviceclient.service.UserFeignClient;
 import com.liuyan.soyaojbackenduserservice.service.UserService;
-import com.liuyan.soyaojcommon.model.entity.User;
+import com.liuyan.model.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

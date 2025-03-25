@@ -3,9 +3,9 @@ package com.liuyan.soyaojbackendquestionservice.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.liuyan.soyaojcommon.model.dto.question.QuestionQueryRequest;
-import com.liuyan.soyaojcommon.model.entity.Question;
-import com.liuyan.soyaojcommon.model.vo.QuestionVO;
+import com.liuyan.model.dto.question.QuestionQueryRequest;
+import com.liuyan.model.entity.Question;
+import com.liuyan.model.vo.QuestionVO;
 
 
 import javax.servlet.http.HttpServletRequest;

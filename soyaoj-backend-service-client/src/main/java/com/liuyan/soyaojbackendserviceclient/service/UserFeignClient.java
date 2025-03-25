@@ -1,10 +1,10 @@
 package com.liuyan.soyaojbackendserviceclient.service;
 
-import com.liuyan.soyaojcommon.common.ErrorCode;
-import com.liuyan.soyaojcommon.exception.BusinessException;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.enums.UserRoleEnum;
-import com.liuyan.soyaojcommon.model.vo.UserVO;
+import com.liuyan.common.ErrorCode;
+import com.liuyan.exception.BusinessException;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.enums.UserRoleEnum;
+import com.liuyan.model.vo.UserVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.List;
 
-import static com.liuyan.soyaojcommon.constant.UserConstant.USER_LOGIN_STATE;
+import static com.liuyan.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户服务

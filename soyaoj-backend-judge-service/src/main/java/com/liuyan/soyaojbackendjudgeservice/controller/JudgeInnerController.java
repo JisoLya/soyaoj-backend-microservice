@@ -2,8 +2,7 @@ package com.liuyan.soyaojbackendjudgeservice.controller;
 
 import com.liuyan.soyaojbackendjudgeservice.judge.JudgeService;
 import com.liuyan.soyaojbackendserviceclient.service.JudgeFeignClient;
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
-import com.liuyan.soyaojcommon.model.vo.QuestionSubmitVO;
+import com.liuyan.model.entity.QuestionSubmit;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

@@ -1,8 +1,8 @@
 package com.liuyan.soyaojbackendjudgeservice.judge.sandbox;
 
 
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeRequest;
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeResponse;
+import com.liuyan.model.codesandbox.ExecuteCodeRequest;
+import com.liuyan.model.codesandbox.ExecuteCodeResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

@@ -1,7 +1,7 @@
 package com.liuyan.soyaojbackendquestionservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.liuyan.soyaojcommon.model.entity.Question;
+import com.liuyan.model.entity.Question;
 
 
 /**

@@ -2,19 +2,19 @@ package com.liuyan.soyaojbackenduserservice.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
+import com.liuyan.model.dto.user.*;
 import com.liuyan.soyaojbackenduserservice.service.UserService;
-import com.liuyan.soyaojcommon.annotation.AuthCheck;
-import com.liuyan.soyaojcommon.common.BaseResponse;
-import com.liuyan.soyaojcommon.common.DeleteRequest;
-import com.liuyan.soyaojcommon.common.ErrorCode;
-import com.liuyan.soyaojcommon.common.ResultUtils;
-import com.liuyan.soyaojcommon.constant.UserConstant;
-import com.liuyan.soyaojcommon.exception.BusinessException;
-import com.liuyan.soyaojcommon.exception.ThrowUtils;
-import com.liuyan.soyaojcommon.model.dto.user.*;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.vo.LoginUserVO;
-import com.liuyan.soyaojcommon.model.vo.UserVO;
+import com.liuyan.annotation.AuthCheck;
+import com.liuyan.common.BaseResponse;
+import com.liuyan.common.DeleteRequest;
+import com.liuyan.common.ErrorCode;
+import com.liuyan.common.ResultUtils;
+import com.liuyan.constant.UserConstant;
+import com.liuyan.exception.BusinessException;
+import com.liuyan.exception.ThrowUtils;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.vo.LoginUserVO;
+import com.liuyan.model.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.commons.lang3.StringUtils;
@@ -33,8 +33,6 @@ import static com.liuyan.soyaojbackenduserservice.service.impl.UserServiceImpl.S
 /**
  * 用户接口
  *
- * @author <a href="https://github.com/liliu">程序员鱼皮</a>
- * @from <a href="https://liu.icu">编程导航知识星球</a>
  */
 @RestController
 @RequestMapping("/")

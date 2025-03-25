@@ -3,11 +3,11 @@ package com.liuyan.soyaojbackendquestionservice.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.liuyan.soyaojcommon.model.dto.questionsubmit.QuestionSubmitAddRequest;
-import com.liuyan.soyaojcommon.model.dto.questionsubmit.QuestionSubmitQueryRequest;
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.vo.QuestionSubmitVO;
+import com.liuyan.model.dto.questionsubmit.QuestionSubmitAddRequest;
+import com.liuyan.model.dto.questionsubmit.QuestionSubmitQueryRequest;
+import com.liuyan.model.entity.QuestionSubmit;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.vo.QuestionSubmitVO;
 
 
 /**

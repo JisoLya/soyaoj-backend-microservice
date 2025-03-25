@@ -1,7 +1,7 @@
 package com.liuyan.soyaojbackenduserservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.liuyan.soyaojcommon.model.entity.User;
+import com.liuyan.model.entity.User;
 
 
 /**

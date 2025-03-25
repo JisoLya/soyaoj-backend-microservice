@@ -1,8 +1,8 @@
 package com.liuyan.soyaojbackendjudgeservice.judge.sandbox.Impl;
 
 
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeRequest;
-import com.liuyan.soyaojcommon.model.codesandbox.ExecuteCodeResponse;
+import com.liuyan.model.codesandbox.ExecuteCodeRequest;
+import com.liuyan.model.codesandbox.ExecuteCodeResponse;
 import com.liuyan.soyaojbackendjudgeservice.judge.sandbox.CodeSandbox;
 
 public class ThirdPartySandbox implements CodeSandbox {

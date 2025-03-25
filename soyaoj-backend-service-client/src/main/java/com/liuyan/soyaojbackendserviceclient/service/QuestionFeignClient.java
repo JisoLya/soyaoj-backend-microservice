@@ -1,7 +1,7 @@
 package com.liuyan.soyaojbackendserviceclient.service;
 
-import com.liuyan.soyaojcommon.model.entity.Question;
-import com.liuyan.soyaojcommon.model.entity.QuestionSubmit;
+import com.liuyan.model.entity.Question;
+import com.liuyan.model.entity.QuestionSubmit;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

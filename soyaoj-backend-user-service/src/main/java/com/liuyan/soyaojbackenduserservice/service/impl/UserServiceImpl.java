@@ -5,15 +5,15 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liuyan.soyaojbackenduserservice.mapper.UserMapper;
 import com.liuyan.soyaojbackenduserservice.service.UserService;
-import com.liuyan.soyaojcommon.common.ErrorCode;
-import com.liuyan.soyaojcommon.constant.CommonConstant;
-import com.liuyan.soyaojcommon.exception.BusinessException;
-import com.liuyan.soyaojcommon.model.dto.user.UserQueryRequest;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.enums.UserRoleEnum;
-import com.liuyan.soyaojcommon.model.vo.LoginUserVO;
-import com.liuyan.soyaojcommon.model.vo.UserVO;
-import com.liuyan.soyaojcommon.utils.SqlUtils;
+import com.liuyan.common.ErrorCode;
+import com.liuyan.constant.CommonConstant;
+import com.liuyan.exception.BusinessException;
+import com.liuyan.model.dto.user.UserQueryRequest;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.enums.UserRoleEnum;
+import com.liuyan.model.vo.LoginUserVO;
+import com.liuyan.model.vo.UserVO;
+import com.liuyan.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.liuyan.soyaojcommon.constant.UserConstant.USER_LOGIN_STATE;
+import static com.liuyan.constant.UserConstant.USER_LOGIN_STATE;
 
 
 /**

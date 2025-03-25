@@ -2,10 +2,10 @@ package com.liuyan.soyaojbackenduserservice.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.liuyan.soyaojcommon.model.dto.user.UserQueryRequest;
-import com.liuyan.soyaojcommon.model.entity.User;
-import com.liuyan.soyaojcommon.model.vo.LoginUserVO;
-import com.liuyan.soyaojcommon.model.vo.UserVO;
+import com.liuyan.model.dto.user.UserQueryRequest;
+import com.liuyan.model.entity.User;
+import com.liuyan.model.vo.LoginUserVO;
+import com.liuyan.model.vo.UserVO;
 
 
 import javax.servlet.http.HttpServletRequest;
