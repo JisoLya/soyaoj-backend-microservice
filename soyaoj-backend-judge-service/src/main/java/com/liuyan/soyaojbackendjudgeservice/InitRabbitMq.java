@@ -20,8 +20,14 @@ public class InitRabbitMq {
             String queueName = "code_queue";
             channel.queueDeclare(queueName, false, false, false, null);
             channel.queueBind(queueName, exchangeName, "my_routKey");
+
+            String submitExchangeName = "submit_exchange";
+            channel.exchangeDeclare(submitExchangeName, "direct");
+            String submitQueueName = "submit_queue";
+            channel.queueDeclare(submitQueueName, false, false, false, null);
+            channel.queueBind(submitQueueName, submitExchangeName, "submit_routKey");
             log.info("消息队列启动成功");
-        }catch (Exception e) {
+        } catch (Exception e) {
             log.error("消息队列启动失败");
         }
     }

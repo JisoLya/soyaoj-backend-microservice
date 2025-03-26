@@ -10,7 +10,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExecuteCodeResponse {
+    /**
+     * 题目提交的ID
+     */
+    private long questionSubmitId;
 
+    /**
+     * 题目的id
+     */
+    private Long id;
+    /**
+     *
+     */
     private JudgeInfo judgeInfo;
 
     /**
